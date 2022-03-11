@@ -1,0 +1,299 @@
+WEB前端开发笔记——HTML
+HTML认知
+一、注释
+语法：<!-- 这是注释的内容 -->；快捷键：ctrl+/
+二、HTML标签的结构
+1.双标签
+语法：<开始标签 >内容</ 结束标签>  前部分叫开始标签，后部分叫结束标签，中间包裹内容。
+
+2.单标签
+ 语法：<标签>
+
+三、标签的关系
+1.父子关系
+（嵌套关系） <head> <title> <title> </head>
+
+2.兄弟关系
+（并列关系）<head><head> <body><body>
+
+四、排版标签
+1.标题标签
+语法：<hx></h>;x表示1~6个等级
+
+1~6级标题，重要程度依次递减；特点：文字变粗，文字变大，并且H1→H6文字逐渐变小，独占一行；快捷键：ctrl+d
+
+2.段落标签
+语法：<p>段落内容</p>
+
+3.换行标签
+语法：<br>换行内容
+
+4.水平标签
+语法：<hr>
+
+五、文本格式化标签
+让文字加粗、下划线、倾斜、删除线等效果；如果 突出重要的强调的强调语气建议使用单词的标签
+
+属性值	属性值	效果
+b	strong	加粗
+u	ins	下划线
+i	em	倾斜
+s	del	删除线
+六、媒体标签
+1.图片标签
+语法： <img src=""alt="">
+
+图片属性
+
+属性的格式：属性名="属性值"
+
+src:文件地址
+ alt:替换文本、没有图的时候显示文本
+ title:鼠标悬停的时候显示文本内容高度/宽度:height/width,注意：高度和宽度只需要给一个值另一个等比例缩放
+热区（图像映射）
+代码示例：
+<map name="planetmap">
+  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+  <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+  <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+</map>
+1、矩形：(左上角顶点坐标为(x1,y1)，右下角顶点坐标为(x2,y2))：<area shape="rect" coords="x1,y1,x2,y2" href=url>
+2、圆形：(圆心坐标为(X1,y1)，半径为r)：<area shape="circle" coords="x1,y1,r" href=url>
+3、多边形：(各顶点坐标依次为(x1,y1)、(x2,y2)、(x3,y3) ......)：<area shape="poly" coords="x1,y1,x2,y2 ......" href=url>
+
+
+属性主要点：
+①标签的属性写在开始标签的内部
+②标签上可以同时存在多个属性
+③属性之间以空格隔开
+④标签名与属性之间必须以空格隔开
+⑤属性之间没有顺序之分
+
+2.路径
+绝对路径（了解）
+指目录下的绝对路径，可以直接到达目标位置，通常<strong>从盘符开始</strong>的路径<br>eg:盘符开头：D:\DAYO1\IMAGES\1.JPG  完整的网络地址：https://attach.52pojie.cn/forum/202111/09/211613m3870mrer86u7hm8.jpg（了解）
+
+<!-- ../表示上一级文件 -->
+
+相对路径
+相对路径（常用）:从<strong>当前文件开始</strong>找目标文件的过程<br>相对路径的分类：同级目录（<img src="目标图片。gif">；<img src="./目标图片.gif">）、下级目录（<img src="文件夹/目标文件名字">）、上级目录（<img src="../目标文件名字">）
+
+3.音频标签
+语法：<audio src=""></audio>
+
+注意:音频标签目前支持三种格式：MP3、Wav、Ogg
+
+属性值	效果
+src	路径
+controls	显示播放的控件
+autoplay	自动播放
+loop	循环播放
+4.视频标签
+语法：<video src=""></video>
+
+注意:视频标签目前支持三种格式：MP4、WavM、Ogg
+
+有关属性见音频标签
+
+5.链接标签
+语法：<a href="跳转的链接/地址">文本内容</a>
+
+作用点击之后，从一个界面跳转到另一个界面；链接标签的target属性来控制目标网页的打开形式
+
+属性值	效果
+_self	默认值，覆盖原网页
+_blank	在新的窗口中跳转
+当网页开发初期，还不知道跳转地址的时候可以在href的值属性#（表示空链接）
+
+HTML认知——综合项目训练
+一、综合案例——招聘
+`<!DOCTYPE html>
+<html lang="en">
+<body>
+<h1>前端开发岗位</h1>
+<hr>
+<h2>职业描述</h2>
+<p>负责重点项目的前端技术方案和架构的研发和维护。</p>
+<h2>岗位要求</h2>
+<p>5年以上前端开发经验，精通html5/css3/javascript等web开发技术;<br>
+    熟悉bootstrap，vue，angularjs，reactjs等框架，熟练掌握一种以上；<br>
+    代码⻛格严谨，能⾼保真还原设计稿，能兼容各种浏览器；<br>
+    对web前端的性能优化以及web常见漏洞有一定的理解和相关实践；<br> 
+    具备良好的分析解决问题能力，能独立承担任务，有开发进度把控能力；<br>
+    责任心强，思路路清晰，抗压能力好，具备良好的对外沟通和团队协作能力。</p>
+    <h2>工作地址</h2>
+    <p>上海市——徐汇区——腾云大厦</p>
+    <img src="./images/map.jpg" alt="地图">
+
+二、综合案例——跳转（index）
+ 
+
+三、综合案例——跳转（指定界面）
+ 
+
+ 
+
+HTML基础
+一、列表
+列表：无序列表、有序列表、自定义列表
+
+1.无序列表
+语法：`<ul> <li>内容</li> <li>内容</li> </ul> `
+特点：列表的每一项前默认显示圆点标识。
+注意：①ul标签中只允许包含li标签
+            ②li标签可以包含任意内容
+
+2.有序列表
+语法： <ol> <li>内容</li> <li>内容</li> </ol>
+有序列表：在网页中表示一组有顺序之分的列表
+显示特点：列表的每一项前默认显示序号标识  
+注意：①ol标签中只允许包含li标签②li标签中可以包含任意内容
+
+3.自定义标签
+标签组成： dl 表示自定义列表的整体，用于包裹dt/dd标签
+dt 表示自定义列表的主题
+表示自定义列表的针对主题的每一项内容
+显示特点：dd前会默认显示缩进效果
+注意：dl标签中只允许包含dt/dd标签
+
+二、表格
+基本标签
+table 表示表格 tr表示行 td表示格
+表格的属性：border 边框宽度 width 表格宽度 height 表格高度
+注意：实际开发中样式用css设置
+表格的标题和表头单元格标签：caption 表格大标题 th表头标签用来替换td
+表格的结构标签（了解）：thead 表格头部 tbody 表格主题 tfoot 表格底部
+表格的结构标签用来包裹tr标签
+1.合并单元格
+跨行合并（垂直合并成一个）
+跨列合并（水平合并成一个）
+合并单元格的步骤： 1.明确合并哪几个单元格
+2.通过左上原则，确定保留谁删除谁：①上下合并，只保留最上，其他删除②左右合并，只保留最左，其他删除
+3.给保留的单元格设置：①跨行合并（rowspan）②跨列合并（colspan）
+注意：合并几个单元格，就是几；同一结构的可以合并
+三、表单
+input基本使用:可以通过type属性值的不同展示不同的效果
+  type的属性：看input的基本使用
+ input占位符（提示信息）：placeholder
+
+四、select下拉菜单
+select下拉菜单的整体 option：下拉菜单的每一项
+
+selected:下拉菜单的默认选中
+
+五、textarea文本域标签
+cols:规定了文本域内可见宽度；rows规定了文本域可见行数
+
+实际开发中用css
+
+六、label标签
+使用方法①
+1.使用label标签把内容（如：文本）包裹起来
+2.在表单标签上添加id属性
+3.在label标签的for属性中设置对应的id属性值
+使用方法②
+1.直接使用label标签把内容和表单标签一起包裹起来
+需要把label标签的for属性删除即可
+
+七、语义化标签
+语义化标签
+没有语义的标签：div：一行只显示一个（独占一行）span：一行可以显示多个
+有语义的布局标签（了解）场景在HTML5新版本中推出的，在移动开发中制作 
+
+字符实体
+1.html中的空格合并现象
+2.常见的字符实体（百度查询）
+结构：&英语;
+
+HTML基础——综合案例
+综合案例1——表格（学生信息表）
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+    <caption ><h2>优秀学生信息表格</Sh2></caption>
+    <tr>
+        <th>年级</th>
+        <th>姓名</th>
+        <th>学号</th>
+        <th>班级</th>
+    </tr>
+    <tr>
+        <td rowspan="2">高三</td>
+        <td>张曼玉</td>
+        <td>110</td>
+        <td>三年级二班</td>
+    </tr>
+    <tr>
+        <td>李青霞</td>
+        <td>120</td>
+        <td>三年级二班</td>
+    </tr>
+    <tr>
+        <td >评语</td>
+        <td colspan="3">你们很优秀</td>
+        
+    </tr>
+    <!-- 表格标题 -->
+    </table>
+</body>
+</html>
+综合案例2——表单
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>青春不常在，抓紧谈恋爱</h1>
+    <hr>
+    <form action="">
+        昵称: <input type="text" placeholder="请输入昵称">
+        <br>
+        性别: <label ><input type="radio" name="sex" checked>男</label>
+        <label ><input type="radio" name="sex" >女</label>
+        <br>
+        所再城市：<select >
+            <option>北京</option>
+            <option>上海</option>
+            <option>广州</option>
+            <option selected>重庆</option>
+        </select>
+        <br>
+        婚姻状态: 
+        <label ><input type="radio" name="1" checked >未婚</label>
+        <label ><input type="radio" name="1" >已婚</label>
+        <label ><input type="radio" name="1">保密</label>
+        <br>
+        喜欢的类型: 
+       <label > <input type="checkbox" >可爱</label>
+       <label > <input type="checkbox" >御姐</label>
+       <label > <input type="checkbox" >性感</label>
+       <br>
+       个人介绍：<br>
+       <textarea name="" id="" cols="60" rows="10"></textarea>
+       <br>
+       <h4>我承诺</h4>
+       <br>
+       <ul>
+           <li>年满18岁，单身</li>
+           <li>抱着严谨的态度</li>
+           <li>真诚寻找另一半</li>
+       </ul>
+       <br>
+       <label ><input type="checkbox" >我同意所有条款</label>
+       <br>
+       <input type="submit" value="免费注册">
+       <button type="reset">重置</button>
+    </form>
+</body>
+</html>
